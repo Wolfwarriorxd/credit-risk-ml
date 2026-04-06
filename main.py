@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import joblib
 
 from xgboost import XGBClassifier
@@ -29,12 +28,13 @@ model = XGBClassifier(
 
 model.fit(X_train, y_train)
 
-# predictions
+# evaluate
 y_prob = model.predict_proba(X_test)[:, 1]
-
-# evaluation
 roc = roc_auc_score(y_test, y_prob)
+
+print("Model trained")
 print("ROC AUC:", roc)
 
 # save model
 joblib.dump(model, "models/credit_model.pkl")
+print("Model saved at models/credit_model.pkl")
