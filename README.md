@@ -35,6 +35,17 @@ Threshold tuning allows control over risk sensitivity
 XGBoost provides the best balance between precision and recall  
 Model performance is stable across different data splits  
 
+Deployment
+
+The model can be used to predict default risk for new customers.
+
+Steps
+
+1 Run main.py to train and save the model  
+2 Run predict.py to generate predictions  
+
+Modify the sample input in predict.py to test different customer profiles  
+
 Technologies Used
 
 Python  
